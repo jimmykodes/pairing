@@ -1,0 +1,12 @@
+version: '3'
+services:
+  flask:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+#    command: gunicorn app:app -b :8000
+    command: python app.py
+    ports:
+    - 80:8000
